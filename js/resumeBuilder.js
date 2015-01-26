@@ -29,7 +29,6 @@ bio.display = function () {
                 .replace('%data%', bio.contacts[key])
         );
     }
-
     $('#header').prepend(HTMLbioPic.replace('%data%', bio.biopic));
     $('#header').prepend(HTMLheaderRole.replace('%data%', bio.role));
     $('#header').prepend(HTMLheaderName.replace('%data%', bio.name));
@@ -39,8 +38,6 @@ bio.display = function () {
     for(var i = 1; i < bio.skills.length; i++){
         $(".flex-item:last").append(HTMLskills.replace('%data%', bio.skills[i]));
     }
-    
-
 };
 bio.display();
 
@@ -80,3 +77,38 @@ work.display = function () {
 };
 work.display();
 
+var projects = {
+    "projects": [
+        {
+            "title": "Orange Udacity Mug",
+            "dates": "2015",
+            "description": "In this project we learned how to implement a mocked HTML page in the most accurate way.",
+            "images": [
+                "images/Project1_1.png",
+                "images/Project1_2.png"
+            ]
+        },
+        {
+            "title": "Interactive Resume",
+            "dates": "2015",
+            "description": "We learned the basics of JavaScript and hoe to separate contents from layout.",
+            "images": [
+                "images/Project2_1.png"
+
+            ]
+        }
+    ]
+};
+projects.display = function () {
+    for (var i in projects.projects) {
+        var pro = projects.projects[i];
+        $("#projects").append(HTMLprojectStart);
+        $(".project-entry:last").append(HTMLprojectTitle.replace('%data%', pro.title));
+        $(".project-entry:last").append(HTMLprojectDates.replace('%data%', pro.dates));
+        $(".project-entry:last").append(HTMLprojectDescription.replace('%data%', pro.description));
+        for (var j in pro.images) {
+            $(".project-entry:last").append(HTMLprojectImage.replace('%data%', pro.images[j]));
+        }
+    }
+};
+projects.display();
