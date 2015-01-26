@@ -1,0 +1,5 @@
+/* better format for skills */
+li {
+    list-style-type: none;
+    line-height: 130%;
+}
