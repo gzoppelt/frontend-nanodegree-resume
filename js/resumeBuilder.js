@@ -43,3 +43,40 @@ bio.display = function () {
 
 };
 bio.display();
+
+var work = {
+    "jobs": [
+        {   "employer": "Autohaus Berndt GmbH & Co. KG",
+            "title": "IT Administrator",
+            "location": "Dresden",
+            "dates": "1994-2002",
+            "description": "Maintaining IT infrastructure and minor programming tasks"
+        },
+        {   "employer": "Autohaus Schmolck GmbH & Co. KG",
+            "title": "IT Administrator",
+            "location": "Emmendingen",
+            "dates": "2003-2015",
+            "description": "It started with maintaining the IT infrastructure and changed later into programming interfaces between different software solutions."
+        },
+        {   "employer": "Z-Bit Solutions Limited",
+            "title": "Programmer",
+            "location": "London",
+            "dates": "since 2013",
+            "description": "AngularJS, node.js, Laravel (PHP)"
+        }
+    ]
+};
+work.display = function () {
+    for (var i in work.jobs){
+        $("#workExperience").append(HTMLworkStart);
+        $(".work-entry:last").append(
+            HTMLworkEmployer.replace('%data%', work.jobs[i].employer)
+            +  HTMLworkTitle.replace('%data%', work.jobs[i].title)
+        );
+        $(".work-entry:last").append(HTMLworkLocation.replace('%data%', work.jobs[i].location));
+        $(".work-entry:last").append(HTMLworkDates.replace('%data%', work.jobs[i].dates));
+        $(".work-entry:last").append(HTMLworkDescription.replace('%data%', work.jobs[i].description));
+    }
+};
+work.display();
+
