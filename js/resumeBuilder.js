@@ -91,7 +91,7 @@ var projects = {
         {
             "title": "Interactive Resume",
             "dates": "2015",
-            "description": "We learned the basics of JavaScript and hoe to separate contents from layout.",
+            "description": "We learned the basics of JavaScript and how to separate content from layout.",
             "images": [
                 "images/Project2_1.png"
 
@@ -112,3 +112,60 @@ projects.display = function () {
     }
 };
 projects.display();
+
+var education = {
+    "schools": [
+        {
+            "name": "TU Dresden",
+            "location": "Dresden",
+            "degree": "none",
+            "majors": [
+                "Mathematics"
+            ],
+            "dates": "1979",
+            "url": "http://tu-dresden.de/en"
+        },
+        {
+            "name": "TU Dresden",
+            "location": "Dresden",
+            "degree": "Master",
+            "majors": [
+                "Informatics"
+            ],
+            "dates": 1988,
+            "url": "http://tu-dresden.de/en"
+        }
+    ],
+    "onlineCourses": [
+        {
+            "title": "Nanodegree Web Developer",
+            "school": "Udacity",
+            "date": "2015",
+            "url": "https://www.udacity.com/course/nd001"
+        }
+    ]
+};
+education.display = function () {
+    $('#education').append(HTMLschoolStart);
+    for (var i in education.schools) {
+        $('.education-entry:last').append(HTMLschoolName.replace('%data%', education.schools[i].name));
+        $('.education-entry:last').append(HTMLschoolLocation.replace('%data%', education.schools[i].location));
+        for (var j in education.schools[i].majors){
+            $('.education-entry:last').append(HTMLschoolMajor.replace('%data%', education.schools[i].majors[j]));
+            $('.education-entry:last').append(HTMLschoolDates.replace('%data%', education.schools[i].dates));
+        }
+
+    };
+    $('.education-entry:last').append(HTMLonlineClasses);
+    for (var i in education.onlineCourses) {
+        $('.education-entry:last').append(
+            HTMLonlineTitle.replace('%data%', education.onlineCourses[i].title) +
+            HTMLonlineSchool.replace('%data%', education.onlineCourses[i].school)
+        );
+        $('.education-entry:last').append();
+        $('.education-entry:last').append(HTMLonlineDates.replace('%data%', education.onlineCourses[i].date));
+        $('.education-entry:last').append(HTMLonlineURL.replace('%data%', education.onlineCourses[i].url));
+    }
+};
+education.display();
+
