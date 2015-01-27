@@ -3,3 +3,7 @@ li {
     list-style-type: none;
     line-height: 130%;
 }
+h3 {
+    text-align: left;
+    padding: 15px 0 5px 0;
+}
