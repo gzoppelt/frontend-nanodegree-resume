@@ -6,12 +6,12 @@ var bio = {
         "mobile": "+44 790 8144 8xx",
         "email": "gzoppelt1@gmail.com",
         "github": "https://github.com/gzoppelt",
-        "twitter": "You do not catch me there!",
+        "twitter": "You will not catch me there!",
         "location": "Nash Mills, Hertfordshire, U.K."
     },
     "welcomeMessage": "Freelancing offers always welcome!",
     "skills": [
-        "AS/400, IBM iSeries, IBM BD/2",
+        "AS/400, IBM iSeries, IBM DB/2",
         "Delphi",
         "PHP, Zend-Framework, Laravel",
         "JavaScript, AngularJS",
